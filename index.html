@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="EEGDash is a Python library for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets. Load, preprocess, and train PyTorch models with MNE-Python and…" name="description" />
+<meta content="EEGDash, EEG, MEG, dataset, Python library, BIDS, neuroscience, PyTorch, MNE-Python, braindecode, fNIRS, EMG, iEEG, OpenNeuro, NEMAR, machine learning, deep learning" name="keywords" />
+<meta property="og:title" content="EEGDash: Python library for 700+ EEG/MEG datasets" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eegdash.org/" />
+<meta property="og:site_name" content="EEG Dash" />
+<meta property="og:description" content="EEGDash is a Python library for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets. Load, preprocess, and train PyTorch models with MNE-Python and…" />
+<meta property="og:image" content="https://eegdash.org/_static/eegdash_social_card.png" />
+<meta property="og:image:alt" content="EEG Dash — data-sharing interface for M/EEG datasets" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@eegdash" />
+
+    <title>EEGDash: Python library for 700+ EEG/MEG datasets &#8212; EEG Dash</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.7953df0a.css?v=314ed3b2" />
+    <link rel="stylesheet" type="text/css" href="_static/css/treemap.087aecf0.css?v=7131b20f" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.99faa59c.css?v=b44e0256" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=6dfdf7c3"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=8c005784"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script defer="defer" src="_static/js/tag-palette.7346f567.js?v=6f5eac9a"></script>
+    <script defer="defer" src="_static/js/search-as-you-type.e09b639d.js?v=8e93d0f7"></script>
+    <script defer="defer" src="_static/js/lazy-embed.1f1f83d2.js?v=118c4c47"></script>
+    <link rel="canonical" href="https://eegdash.org/" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Datasets Catalog" href="dataset_summary.html" />
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.7" />
+
+  
+  <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+  <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+
+  
+  <link rel="preconnect" href="https://cdn.datatables.net" crossorigin>
+  <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
+  </noscript>
+
+  
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"EEG Dash","alternateName":"EEGDash","url":"https://eegdash.org/","logo":"https://eegdash.org/_static/eegdash_social_card.png","description":"EEGDash is a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, providing PyTorch-ready data access for machine learning and reproducible neuroscience research.","sameAs":["https://github.com/eegdash/EEGDash","https://pypi.org/project/eegdash/","https://registry.opendata.aws/eegdash/"]},{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EEGDash","alternateName":"EEG-DaSh","applicationCategory":"ScienceApplication","applicationSubCategory":"DeveloperApplication","operatingSystem":"Cross-platform","url":"https://eegdash.org/","softwareVersion":"0.7.2","codeRepository":"https://github.com/eegdash/EEGDash","programmingLanguage":"Python","runtimePlatform":"Python 3.11+","license":"https://opensource.org/licenses/BSD-3-Clause","downloadUrl":"https://pypi.org/project/eegdash/","installUrl":"https://pypi.org/project/eegdash/","description":"Python library for discovering, loading, and preprocessing 700+ BIDS-first EEG/MEG datasets. Integrates with MNE-Python, braindecode, and PyTorch for machine-learning workflows on open neuroelectromagnetic data.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"WebSite","name":"EEG Dash","url":"https://eegdash.org/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eegdash.org/dataset_summary.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+
+  
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="EEGDash — LLM-friendly index">
+  <link rel="llms" href="/llms.txt" title="EEGDash — llms.txt index">
+  <link rel="llms-txt" href="/llms.txt">
+  <link rel="llms-full" type="text/markdown" href="/llms-full.txt" title="EEGDash — full markdown corpus">
+  <link rel="alternate" type="application/json" href="/.well-known/agent-skills/index.json" title="EEGDash — Agent Skills">
+  <link rel="alternate" type="application/linkset+json" href="/.well-known/api-catalog" title="EEGDash — API catalog">
+  <meta name="llms-txt" content="/llms.txt">
+  <meta name="llms" content="/llms.txt">
+  <meta name="ai-content-index" content="/llms.txt">
+  <meta name="ai.content_index" content="/llms.txt">
+
+  
+  
+  <link rel="preload" as="fetch" crossorigin="anonymous"
+        href="_static/dataset_generated/search_index.json">
+  
+  <script defer src="_static/lib/fuse.min.e3621b53.js"></script>
+  <script defer src="_static/js/hero-search.2925a87f.js"></script>
+
+  <!-- Google Tag Manager — deferred to DOMContentLoaded so the GTM
+       bootstrap no longer blocks first-paint or the Sphinx search-index
+       load. Functionally equivalent to the inline snippet below but
+       saves ~60 ms of Total Blocking Time per PageSpeed Insights. -->
+  <script>
+    (function(){
+      function loadGTM(){
+        if (window.__gtmLoaded) return;
+        window.__gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MXC3DGL6');
+      }
+      // Defer GTM off the critical path. requestIdleCallback wants an
+      // IdleRequestOptions object as its second argument while
+      // setTimeout wants a plain number — using the same `1` for both
+      // raised a TypeError in Lighthouse's console that dragged the SEO
+      // score down. Branch on availability so each API gets the shape
+      // it expects.
+      function scheduleGTM() {
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(loadGTM, { timeout: 2000 });
+        } else {
+          setTimeout(loadGTM, 1);
+        }
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        scheduleGTM();
+      } else {
+        document.addEventListener('DOMContentLoaded', scheduleGTM);
+      }
+    })();
+  </script>
+  <!-- End Google Tag Manager -->
+
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="_static/eegdash_long.svg" class="logo__image only-light" alt="EEG Dash Logo"/>
+    <img src="_static/eegdash_long.svg" class="logo__image only-dark pst-js-only" alt="EEG Dash Logo"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install/install.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/api.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://eeg2025.github.io/">
+    EEG2025
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="External Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/eegdash/EEGDash" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/eegdash/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/8jd7nVKwsc" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/discord.svg" class="icon-link-image" alt="Discord"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install/install.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/api.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://eeg2025.github.io/">
+    EEG2025
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="External Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/eegdash/EEGDash" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/eegdash/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/8jd7nVKwsc" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/icons/discord.svg" class="icon-link-image" alt="Discord"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="hf-hero docutils container">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 hf-hero-grid docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-4 sd-g-xs-4 sd-g-sm-4 sd-g-md-4 sd-g-lg-4 docutils">
+<div class="sd-col sd-d-flex-column hf-hero-copy hf-reveal hf-delay-1 docutils">
+<h1 class="hf-hero-title">EEGDash: the Python library for 700+ BIDS-first EEG/MEG datasets.</h1><p class="hf-hero-lede">Install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">eegdash</span></code>, then load, preprocess, and train
+PyTorch models on open EEG/MEG data in minutes. Works hand-in-hand with
+MNE-Python and braindecode.</p>
+<form class="hf-search" action="dataset_summary.html" method="get" role="search" aria-label="Dataset search">
+  <label class="hf-sr-only" for="hf-search-input">Search datasets</label>
+  <div class="hf-search-input-wrap">
+    <span class="hf-search-icon" aria-hidden="true">&#128269;</span>
+    <input
+      id="hf-search-input"
+      class="hf-search-input"
+      type="search"
+      name="q"
+      placeholder="Search datasets (e.g., visual, P300, resting-state)"
+      autocomplete="off"
+    />
+    <button class="hf-search-submit" type="submit">Search</button>
+  </div>
+  <div class="hf-search-suggest">
+    <span class="hf-suggest-label">Suggested:</span>
+    <a class="hf-suggest-link" data-query="ds004504" href="/api/dataset/eegdash.dataset.DS004504.html">ds004504</a>
+    <a class="hf-suggest-link" data-query="ds000117" href="/api/dataset/eegdash.dataset.DS000117.html">ds000117</a>
+    <a class="hf-suggest-link" data-query="nm000107" href="/api/dataset/eegdash.dataset.NM000107.html">nm000107</a>
+  </div>
+</form><div class="hf-hero-actions docutils container">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-btn-lg hf-btn hf-btn-primary reference internal" href="dataset_summary.html"><span class="doc">Browse datasets</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-btn-lg hf-btn hf-btn-secondary reference internal" href="install/install.html"><span class="doc">Get started</span></a></p>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column hf-hero-panel hf-reveal hf-delay-2 docutils">
+<div class="hf-hero-card hf-quickstart docutils container">
+<p class="hf-card-title">Quickstart</p>
+<div class="sd-tab-set hf-code-tabs docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Install</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>eegdash
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+First search</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">eegdash</span><span class="w"> </span><span class="kn">import</span> <span class="n">EEGDash</span>
+
+<span class="n">eegdash</span> <span class="o">=</span> <span class="n">EEGDash</span><span class="p">()</span>
+<span class="n">records</span> <span class="o">=</span> <span class="n">eegdash</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;ds002718&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span><span class="si">}</span><span class="s2"> records.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="hf-card-note">Works with Python 3.10+. BIDS-first. Runs locally.</p>
+<div class="hf-card-actions docutils container">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-btn-sm hf-btn hf-btn-primary reference internal" href="user_guide.html"><span class="doc">Run your first search</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-btn-sm hf-btn hf-btn-ghost reference internal" href="api/api.html"><span class="doc">Read the Docs</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 class="hf-section-title">At a glance</h2>
+<p class="hf-section-subtitle">Search-first discovery with reproducible pipelines and standardized metadata.</p><div class="hf-badges docutils container">
+<a class="reference external image-reference" href="https://github.com/eegdash/EEGDash/actions/workflows/tests.yml"><img alt="Test Status" height="20" src="https://github.com/eegdash/EEGDash/actions/workflows/tests.yml/badge.svg" width="104" />
+</a>
+<a class="reference external image-reference" href="https://github.com/eegdash/EEGDash/actions/workflows/doc.yaml"><img alt="Doc Status" height="20" src="https://github.com/eegdash/EEGDash/actions/workflows/doc.yaml/badge.svg" width="102" />
+</a>
+<a class="reference external image-reference" href="https://pypi.org/project/eegdash/"><img alt="PyPI" height="20" src="https://img.shields.io/pypi/v/eegdash?color=blue&amp;style=flat-square" width="78" />
+</a>
+<a class="reference external image-reference" href="https://pypi.org/project/eegdash/"><img alt="Python Versions" height="20" src="https://img.shields.io/pypi/pyversions/eegdash?style=flat-square" width="198" />
+</a>
+<a class="reference external image-reference" href="https://pepy.tech/project/eegdash"><img alt="Downloads" height="20" src="https://pepy.tech/badge/eegdash" width="106" />
+</a>
+<a class="reference external image-reference" href="https://codecov.io/gh/eegdash/EEGDash"><img alt="Code Coverage" height="20" src="https://codecov.io/gh/eegdash/EEGDash/branch/main/graph/badge.svg" width="112" />
+</a>
+<a class="reference external image-reference" href="https://github.com/eegdash/EEGDash/blob/main/LICENSE"><img alt="License" height="20" src="https://img.shields.io/pypi/l/eegdash?style=flat-square" width="134" />
+</a>
+<a class="reference external image-reference" href="https://github.com/eegdash/EEGDash"><img alt="GitHub Stars" height="20" src="https://img.shields.io/github/stars/eegdash/eegdash?style=flat-square" width="60" />
+</a>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 hf-stat-grid docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-4 sd-row-cols-lg-4 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-left hf-stat-card hf-reveal hf-delay-1 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Datasets</div>
+<p class="hf-stat-value sd-card-text">700+</p>
+<p class="hf-stat-text sd-card-text">Curated and standardized metadata ready to explore.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="dataset_summary.html"><span class="doc">Datasets Catalog</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-left hf-stat-card hf-reveal hf-delay-2 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Modalities</div>
+<p class="hf-stat-value sd-card-text">5</p>
+<p class="hf-stat-text sd-card-text">EEG, MEG, fNIRS, EMG, and iEEG coverage.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="dataset_summary.html"><span class="doc">Datasets Catalog</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-left hf-stat-card hf-reveal hf-delay-3 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+BIDS-first</div>
+<p class="hf-stat-value sd-card-text">BIDS</p>
+<p class="hf-stat-text sd-card-text">Interoperability and reproducibility baked in.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="user_guide.html"><span class="doc">User Guide</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-left hf-stat-card hf-reveal hf-delay-3 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Open source</div>
+<p class="hf-stat-value sd-card-text">GitHub</p>
+<p class="hf-stat-text sd-card-text">Community-driven datasets, pipelines, and benchmarks.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/eegdash/EEGDash"><span>https://github.com/eegdash/EEGDash</span></a></div>
+</div>
+</div>
+</div>
+<div class="hf-callout hf-reveal hf-delay-2 docutils container">
+<p class="hf-callout-title">Build with the community</p>
+<p class="hf-callout-text">Share datasets, contribute pipelines, and help define open standards for EEG and MEG.</p>
+<div class="hf-callout-actions docutils container">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-btn-lg hf-btn hf-btn-secondary reference external" href="https://github.com/eegdash/EEGDash"><span>GitHub</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-btn-lg hf-btn hf-btn-primary reference external" href="https://discord.gg/8jd7nVKwsc"><span>Join Discord</span></a></p>
+</div>
+<p class="hf-callout-support">Support Institutions</p>
+<div class="logos-container hf-logo-cloud docutils container">
+<div class="logo-item docutils container">
+<a class="can-zoom only-dark reference internal image-reference" href="_images/ucsd_white.svg"><img alt="UCSD" class="can-zoom only-dark" height="80" src="_images/ucsd_white.svg" width="260" />
+</a>
+<a class="can-zoom only-light reference internal image-reference" href="_images/ucsd_dark.svg"><img alt="UCSD" class="can-zoom only-light" height="80" src="_images/ucsd_dark.svg" width="260" />
+</a>
+</div>
+<div class="logo-item docutils container">
+<a class="can-zoom only-dark reference internal image-reference" href="_images/bgu_dark.svg"><img alt="Ben-Gurion University of the Negev (BGU)" class="can-zoom only-dark" height="80" src="_images/bgu_dark.svg" width="260" />
+</a>
+<a class="can-zoom only-light reference internal image-reference" href="_images/bgu_white.svg"><img alt="Ben-Gurion University of the Negev (BGU)" class="can-zoom only-light" height="80" src="_images/bgu_white.svg" width="260" />
+</a>
+</div>
+</div>
+<p class="hf-callout-funders">Funders</p>
+<div class="hf-supporter-line docutils container">
+<a class="hf-supporter-logo reference internal image-reference" href="_images/nsf_logo.png"><img alt="National Science Foundation (NSF)" class="hf-supporter-logo" height="100" src="_images/nsf_logo.png" width="100" />
+</a>
+<p class="hf-supporter-text">AWS Open Data Sponsorship Program</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="dataset_summary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datasets Catalog</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025-2026, EEG Dash Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

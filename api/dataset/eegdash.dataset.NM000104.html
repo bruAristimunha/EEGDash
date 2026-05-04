@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography — emg dataset, 108 subjects, 1136 recordings. Access via…" name="description" />
+<meta content="NM000104, emg, BIDS, EEG dataset, nemar" name="keywords" />
+<meta property="og:title" content="NM000104: emg dataset, 108 subjects" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eegdash.org/api/dataset/eegdash.dataset.NM000104.html" />
+<meta property="og:site_name" content="EEG Dash" />
+<meta property="og:description" content="emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography — emg dataset, 108 subjects, 1136 recordings. Access via…" />
+<meta property="og:image" content="https://eegdash.org/_static/eegdash_social_card.png" />
+<meta property="og:image:alt" content="EEG Dash — data-sharing interface for M/EEG datasets" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@eegdash" />
+
+    <title>NM000104: emg dataset, 108 subjects &#8212; EEG Dash</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.7953df0a.css?v=314ed3b2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/treemap.087aecf0.css?v=7131b20f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.99faa59c.css?v=b44e0256" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=6dfdf7c3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=8c005784"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/dataset/eegdash.dataset.NM000104';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script defer="defer" src="../../_static/js/tag-palette.7346f567.js?v=6f5eac9a"></script>
+    <script defer="defer" src="../../_static/js/search-as-you-type.e09b639d.js?v=8e93d0f7"></script>
+    <script defer="defer" src="../../_static/js/lazy-embed.1f1f83d2.js?v=118c4c47"></script>
+    <link rel="canonical" href="https://eegdash.org/api/dataset/eegdash.dataset.NM000104.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NM000105: emg dataset, 100 subjects" href="eegdash.dataset.NM000105.html" />
+    <link rel="prev" title="NM000103: eeg dataset, 447 subjects" href="eegdash.dataset.NM000103.html" />
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.7" />
+
+  
+  <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+  <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+
+  
+  <link rel="preconnect" href="https://cdn.datatables.net" crossorigin>
+  <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
+  </noscript>
+
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eegdash.org/"},{"@type":"ListItem","position":2,"name":"Datasets","item":"https://eegdash.org/api/dataset/api_dataset.html"},{"@type":"ListItem","position":3,"name":"NM000104"}]}</script>
+
+  
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="EEGDash — LLM-friendly index">
+  <link rel="llms" href="/llms.txt" title="EEGDash — llms.txt index">
+  <link rel="llms-txt" href="/llms.txt">
+  <link rel="llms-full" type="text/markdown" href="/llms-full.txt" title="EEGDash — full markdown corpus">
+  <link rel="alternate" type="application/json" href="/.well-known/agent-skills/index.json" title="EEGDash — Agent Skills">
+  <link rel="alternate" type="application/linkset+json" href="/.well-known/api-catalog" title="EEGDash — API catalog">
+  <meta name="llms-txt" content="/llms.txt">
+  <meta name="llms" content="/llms.txt">
+  <meta name="ai-content-index" content="/llms.txt">
+  <meta name="ai.content_index" content="/llms.txt">
+
+  
+
+  <!-- Google Tag Manager — deferred to DOMContentLoaded so the GTM
+       bootstrap no longer blocks first-paint or the Sphinx search-index
+       load. Functionally equivalent to the inline snippet below but
+       saves ~60 ms of Total Blocking Time per PageSpeed Insights. -->
+  <script>
+    (function(){
+      function loadGTM(){
+        if (window.__gtmLoaded) return;
+        window.__gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MXC3DGL6');
+      }
+      // Defer GTM off the critical path. requestIdleCallback wants an
+      // IdleRequestOptions object as its second argument while
+      // setTimeout wants a plain number — using the same `1` for both
+      // raised a TypeError in Lighthouse's console that dragged the SEO
+      // score down. Branch on availability so each API gets the shape
+      // it expects.
+      function scheduleGTM() {
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(loadGTM, { timeout: 2000 });
+        } else {
+          setTimeout(loadGTM, 1);
+        }
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        scheduleGTM();
+      } else {
+        document.addEventListener('DOMContentLoaded', scheduleGTM);
+      }
+    })();
+  </script>
+  <!-- End Google Tag Manager -->
+
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/eegdash_long.svg" class="logo__image only-light" alt="EEG Dash Logo"/>
+    <img src="../../_static/eegdash_long.svg" class="logo__image only-dark pst-js-only" alt="EEG Dash Logo"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/install.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../generated/auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://eeg2025.github.io/">
+    EEG2025
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="External Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/eegdash/EEGDash" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/eegdash/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/8jd7nVKwsc" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/discord.svg" class="icon-link-image" alt="Discord"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/install.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../generated/auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://eeg2025.github.io/">
+    EEG2025
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="External Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/eegdash/EEGDash" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/eegdash/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/pypi.svg" class="icon-link-image" alt="PyPI"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/8jd7nVKwsc" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/icons/discord.svg" class="icon-link-image" alt="Discord"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api_core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_features.html">Feature API</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api_dataset.html">Datasets API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eegdash.EEGDashDataset.html">EEGDashDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eegdash.dataset.EEGChallengeDataset.html">EEGChallengeDataset</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="source_nemar.html">Nemar Datasets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R1.html">EEG2025R1: eeg dataset, 136 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R10.html">EEG2025R10: eeg dataset, 533 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R10MINI.html">EEG2025R10MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R11.html">EEG2025R11: eeg dataset, 430 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R11MINI.html">EEG2025R11MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R1MINI.html">EEG2025R1MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R2.html">EEG2025R2: eeg dataset, 150 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R2MINI.html">EEG2025R2MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R3.html">EEG2025R3: eeg dataset, 184 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R3MINI.html">EEG2025R3MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R4.html">EEG2025R4: eeg dataset, 324 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R4MINI.html">EEG2025R4MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R5.html">EEG2025R5: eeg dataset, 330 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R5MINI.html">EEG2025R5MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R6.html">EEG2025R6: eeg dataset, 135 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R6MINI.html">EEG2025R6MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R7.html">EEG2025R7: eeg dataset, 381 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R7MINI.html">EEG2025R7MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R8.html">EEG2025R8: eeg dataset, 257 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R8MINI.html">EEG2025R8MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R9.html">EEG2025R9: eeg dataset, 295 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.EEG2025R9MINI.html">EEG2025R9MINI: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000103.html">NM000103: eeg dataset, 447 subjects</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">NM000104: emg dataset, 108 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000105.html">NM000105: emg dataset, 100 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000106.html">NM000106: emg dataset, 100 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000107.html">NM000107: emg dataset, 100 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000108.html">NM000108: emg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000109.html">NM000109: eeg dataset, 36 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000110.html">NM000110: eeg dataset, 24 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000112.html">NM000112: eeg dataset, 123 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000113.html">NM000113: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000114.html">NM000114: eeg dataset, 64 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000115.html">NM000115: eeg dataset, 4 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000118.html">NM000118: eeg dataset, 9 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000119.html">NM000119: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000120.html">NM000120: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000121.html">NM000121: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000122.html">NM000122: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000123.html">NM000123: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000124.html">NM000124: eeg dataset, 24 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000125.html">NM000125: eeg dataset, 23 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000126.html">NM000126: eeg dataset, 34 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000127.html">NM000127: eeg dataset, 40 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000128.html">NM000128: eeg dataset, 59 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000129.html">NM000129: eeg dataset, 70 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000130.html">NM000130: eeg dataset, 100 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000131.html">NM000131: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000132.html">NM000132: eeg dataset, 40 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000133.html">NM000133: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000134.html">NM000134: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000135.html">NM000135: eeg dataset, 1 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000136.html">NM000136: eeg dataset, 31 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000137.html">NM000137: eeg dataset, 7 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000138.html">NM000138: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000139.html">NM000139: eeg dataset, 9 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000140.html">NM000140: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000141.html">NM000141: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000142.html">NM000142: eeg dataset, 6 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000143.html">NM000143: eeg dataset, 5 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000144.html">NM000144: eeg dataset, 9 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000145.html">NM000145: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000146.html">NM000146: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000147.html">NM000147: eeg dataset, 44 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000148.html">NM000148: eeg dataset, 30 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000149.html">NM000149: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000150.html">NM000150: eeg dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000151.html">NM000151: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000152.html">NM000152: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000155.html">NM000155: emg dataset, 6 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000156.html">NM000156: eeg dataset, 37 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000157.html">NM000157: eeg dataset, 19 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000158.html">NM000158: eeg dataset, 50 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000159.html">NM000159: emg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000160.html">NM000160: eeg dataset, 18 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000161.html">NM000161: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000162.html">NM000162: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000163.html">NM000163: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000165.html">NM000165: emg dataset, 1 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000166.html">NM000166: eeg dataset, 95 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000167.html">NM000167: eeg dataset, 25 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000168.html">NM000168: eeg dataset, 6 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000169.html">NM000169: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000170.html">NM000170: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000171.html">NM000171: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000172.html">NM000172: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000173.html">NM000173: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000175.html">NM000175: fnirs dataset, 5 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000176.html">NM000176: eeg dataset, 5 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000179.html">NM000179: eeg dataset, 215 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000180.html">NM000180: eeg dataset, 45 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000181.html">NM000181: eeg dataset, 2417 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000185.html">NM000185: eeg dataset, 100 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000186.html">NM000186: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000187.html">NM000187: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000188.html">NM000188: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000189.html">NM000189: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000190.html">NM000190: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000191.html">NM000191: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000192.html">NM000192: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000193.html">NM000193: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000194.html">NM000194: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000195.html">NM000195: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000196.html">NM000196: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000197.html">NM000197: eeg dataset, 21 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000198.html">NM000198: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000199.html">NM000199: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000200.html">NM000200: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000201.html">NM000201: eeg dataset, 24 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000202.html">NM000202: eeg dataset, 25 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000203.html">NM000203: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000204.html">NM000204: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000205.html">NM000205: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000206.html">NM000206: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000207.html">NM000207: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000208.html">NM000208: eeg dataset, 14 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000209.html">NM000209: eeg dataset, 25 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000210.html">NM000210: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000211.html">NM000211: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000212.html">NM000212: eeg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000213.html">NM000213: eeg dataset, 30 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000214.html">NM000214: eeg dataset, 30 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000215.html">NM000215: eeg dataset, 38 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000216.html">NM000216: eeg dataset, 43 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000217.html">NM000217: eeg dataset, 44 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000218.html">NM000218: eeg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000219.html">NM000219: eeg dataset, 18 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000221.html">NM000221: eeg dataset, 19 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000222.html">NM000222: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000223.html">NM000223: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000225.html">NM000225: eeg dataset, 1983 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000226.html">NM000226: eeg dataset, 4 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000227.html">NM000227: eeg dataset, 31 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000228.html">NM000228: eeg dataset, 356 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000229.html">NM000229: eeg dataset, 29 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000230.html">NM000230: eeg dataset, 30 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000231.html">NM000231: eeg dataset, 8 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000232.html">NM000232: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000234.html">NM000234: eeg dataset, 21 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000235.html">NM000235: eeg dataset, 31 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000236.html">NM000236: eeg dataset, 21 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000237.html">NM000237: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000238.html">NM000238: eeg dataset, 87 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000239.html">NM000239: eeg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000240.html">NM000240: eeg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000241.html">NM000241: ieeg dataset, 2 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000242.html">NM000242: eeg dataset, 22 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000243.html">NM000243: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000244.html">NM000244: eeg dataset, 64 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000245.html">NM000245: eeg dataset, 52 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000246.html">NM000246: eeg dataset, 51 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000247.html">NM000247: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000248.html">NM000248: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000249.html">NM000249: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000250.html">NM000250: eeg dataset, 87 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000251.html">NM000251: ieeg dataset, 1 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000253.html">NM000253: ieeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000254.html">NM000254: eeg dataset, 22 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000255.html">NM000255: eeg dataset, 30 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000256.html">NM000256: eeg dataset, 29 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000259.html">NM000259: eeg dataset, 10 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000260.html">NM000260: eeg dataset, 23 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000264.html">NM000264: eeg dataset, 24 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000265.html">NM000265: eeg dataset, 31 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000266.html">NM000266: eeg dataset, 13 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000267.html">NM000267: eeg dataset, 29 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000268.html">NM000268: eeg dataset, 29 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000270.html">NM000270: eeg dataset, 27 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000271.html">NM000271: eeg dataset, 28 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000272.html">NM000272: eeg dataset, 22 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000277.html">NM000277: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000301.html">NM000301: eeg dataset, 17 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000303.html">NM000303: eeg dataset, 18 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000310.html">NM000310: eeg dataset, 11 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000311.html">NM000311: eeg dataset, 25 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000313.html">NM000313: eeg dataset, 24 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000321.html">NM000321: eeg dataset, 36 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000323.html">NM000323: eeg dataset, 54 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000326.html">NM000326: eeg dataset, 19 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000329.html">NM000329: eeg dataset, 16 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000336.html">NM000336: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000338.html">NM000338: eeg dataset, 54 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000339.html">NM000339: eeg dataset, 62 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000340.html">NM000340: eeg dataset, 20 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000341.html">NM000341: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000342.html">NM000342: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000343.html">NM000343: eeg dataset, 15 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000344.html">NM000344: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000345.html">NM000345: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000346.html">NM000346: eeg dataset, 12 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000347.html">NM000347: eeg dataset, 37 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000348.html">NM000348: eeg dataset, 51 subjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eegdash.dataset.NM000351.html">NM000351: eeg dataset, 19 subjects</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="source_openneuro.html">Openneuro Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source_other.html">Other Datasets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_notes.html">Developer Notes</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="api_dataset.html" class="nav-link">Datasets API</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="source_nemar.html" class="nav-link">Nemar Datasets</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">NM000104: emg dataset, 108 subjects</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nm000104-emg-dataset-108-subjects">
+<h1>NM000104: emg dataset, 108 subjects<a class="headerlink" href="#nm000104-emg-dataset-108-subjects" title="Link to this heading">#</a></h1>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography","alternateName":"NM000104","description":"emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography. emg dataset accessible via EEGDash as ``NM000104`` with standardized BIDS metadata.","url":"https://eegdash.org/api/dataset/eegdash.dataset.NM000104.html","keywords":["emg","BIDS","neuroscience","EEG","MEG"],"isAccessibleForFree":true,"includedInDataCatalog":{"@type":"DataCatalog","name":"EEG Dash","url":"https://eegdash.org/"},"identifier":"doi:10.82901/nemar.nm000104","sameAs":["https://doi.org/10.82901/nemar.nm000104","https://openneuro.org/datasets/nm000104","https://nemar.org/dataexplorer/detail?dataset_id=nm000104","https://nemar.org/dataexplorer/detail/nm000104"],"creator":[{"@type":"Person","name":"Viswanath Sivakumar"},{"@type":"Person","name":"Jeffrey Seely"},{"@type":"Person","name":"Alan Du"},{"@type":"Person","name":"Sean R. Bittner"},{"@type":"Person","name":"Adam Berenzweig"},{"@type":"Person","name":"Anuoluwapo Bolarinwa"},{"@type":"Person","name":"Alexandre Gramfort"},{"@type":"Person","name":"Michael I. Mandel"}],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","datePublished":"2024-01-01"}</script><p><em>emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography</em></p>
+<p>Access recordings and metadata through EEGDash.</p>
+<p><strong>Citation:</strong> Viswanath Sivakumar, Jeffrey Seely, Alan Du, Sean R. Bittner, Adam Berenzweig, Anuoluwapo Bolarinwa, Alexandre Gramfort, Michael I. Mandel (2024). <em>emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography</em>. <a class="reference external" href="https://doi.org/10.82901/nemar.nm000104">10.82901/nemar.nm000104</a></p>
+<p class="sd-badges"><span class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary">Modality: emg</span> <span class="sd-sphinx-override sd-badge sd-outline-secondary sd-text-secondary">Subjects: 108</span> <span class="sd-sphinx-override sd-badge sd-outline-secondary sd-text-secondary">Recordings: 1136</span> <span class="sd-sphinx-override sd-badge sd-outline-success sd-text-success">License: CC-BY-NC-SA-4.0</span> <span class="sd-sphinx-override sd-badge sd-outline-warning sd-text-warning">Source: nemar</span></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Metadata: Complete (100%)</span></p>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="start" for="sd-tab-item-0">
+Get Started</label><div class="sd-tab-content docutils">
+<p><strong>Install</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>eegdash
+</pre></div>
+</div>
+<p><strong>Access the data</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">eegdash.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">NM000104</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">NM000104</span><span class="p">(</span><span class="n">cache_dir</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="c1"># Get the raw object of the first recording</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">datasets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">raw</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="query" for="sd-tab-item-1">
+Query &amp; Filter</label><div class="sd-tab-content docutils">
+<p><strong>Filter by subject</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">NM000104</span><span class="p">(</span><span class="n">cache_dir</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Advanced query</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">NM000104</span><span class="p">(</span>
+    <span class="n">cache_dir</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;subject&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;$in&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">]}},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Iterate recordings</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">subject</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="cite" for="sd-tab-item-2">
+Cite This Dataset</label><div class="sd-tab-content docutils">
+<p>If you use this dataset in your research, please cite the original authors.</p>
+<p><strong>BibTeX</strong></p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@dataset</span><span class="p">{</span><span class="nl">nm000104</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Viswanath Sivakumar and Jeffrey Seely and Alan Du and Sean R. Bittner and Adam Berenzweig and Anuoluwapo Bolarinwa and Alexandre Gramfort and Michael I. Mandel}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.82901/nemar.nm000104}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.82901/nemar.nm000104}</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="about-this-dataset">
+<h2>About This Dataset<a class="headerlink" href="#about-this-dataset" title="Link to this heading">#</a></h2>
+<p><strong>emg2qwerty: Touch Typing from Surface Electromyography</strong></p>
+<p><strong>Overview</strong></p>
+<p><strong>Dataset</strong>: emg2qwerty - Touch typing from wrist-based surface electromyography
+<strong>Task</strong>: Touch typing on QWERTY keyboard
+<strong>Participants</strong>: 108 subjects
+<strong>Sessions</strong>: 1,135 total (average 10 per subject, range 1-18)</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">View full README</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>emg2qwerty: Touch Typing from Surface Electromyography</strong></p>
+<p class="sd-card-text"><strong>Overview</strong></p>
+<p class="sd-card-text"><strong>Dataset</strong>: emg2qwerty - Touch typing from wrist-based surface electromyography
+<strong>Task</strong>: Touch typing on QWERTY keyboard
+<strong>Participants</strong>: 108 subjects
+<strong>Sessions</strong>: 1,135 total (average 10 per subject, range 1-18)
+<strong>Duration</strong>: 346.4 hours total (9.5-47.5 min per session)
+<strong>Publication</strong>: Sivakumar et al., 2024 - “emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography”</p>
+<p class="sd-card-text"><strong>Purpose</strong></p>
+<p class="sd-card-text">This dataset captures wrist-based sEMG signals during touch typing on a physical keyboard. The goal is to enable keyboard-free text input by decoding typing intent directly from neuromuscular activity, with applications in AR/VR, mobile computing, and brain-computer interfaces.
+This is the largest public sEMG dataset to date, specifically designed to study:
+- Cross-user generalization
+- Cross-session adaptation (domain shift from electrode placement)
+- Sequence-to-sequence learning (analogous to automatic speech recognition)
+- High-bandwidth neuromotor interfaces</p>
+<p class="sd-card-text"><strong>Dataset Details</strong></p>
+<p class="sd-card-text"><strong>Participants</strong></p>
+<p class="sd-card-text"><strong>Sample size</strong>: 108 participants
+<strong>Demographics</strong>: Not available (age, sex, handedness marked as n/a)
+<strong>Screening</strong>: Touch typists with &gt;90% correct finger-to-key mapping
+<strong>Typing speed</strong>: 130-439 keys/min (mean: 265 keys/min, ~4.4 keys/sec)</p>
+<p class="sd-card-text"><strong>Hardware</strong></p>
+<p class="sd-card-text"><strong>Device</strong>: sEMG Research Device (sEMG-RD)
+<strong>Configuration</strong>: Two wristbands (left and right wrists)
+<strong>Channels</strong>: 32 total (16 per wrist)
+<strong>Sampling rate</strong>: 2000 Hz
+<strong>Bit depth</strong>: 12 bits
+<strong>Dynamic range</strong>: ±6.6 mV
+<strong>Bandwidth</strong>: 20-850 Hz
+<strong>Connectivity</strong>: Bluetooth
+<strong>Electrode type</strong>: Dry gold-plated differential pairs</p>
+<p class="sd-card-text"><strong>Recording Setup</strong></p>
+<p class="sd-card-text"><strong>Keyboard</strong>: Apple Magic Keyboard (US English)
+<strong>Text prompts</strong>:
+- Random words from dictionary
+- Sentences from English Wikipedia
+- Filtered for offensive terms
+- Lowercase with basic punctuation only</p>
+<p class="sd-card-text"><strong>Ground truth</strong>: Keylogger recording key-down and key-up timestamps (±0.5 ms precision)
+<strong>Backspace usage</strong>: Allowed (natural typing behavior)</p>
+<p class="sd-card-text"><strong>Session Protocol</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Participant dons two sEMG-RDs (one per wrist)</p></li>
+<li><p class="sd-card-text">Types prompted text on physical keyboard</p></li>
+<li><p class="sd-card-text">Keylogger records all keystrokes with timestamps</p></li>
+<li><p class="sd-card-text">sEMG signals streamed via Bluetooth</p></li>
+<li><p class="sd-card-text">Between sessions: Bands doffed and re-donned (realistic electrode placement variability)</p></li>
+</ol>
+<p class="sd-card-text"><strong>Session duration</strong>: 9.5-47.5 minutes (depends on typing speed)
+<strong>Inter-session protocol</strong>: Complete band removal and replacement to simulate real-world usage</p>
+<p class="sd-card-text"><strong>Data Contents</strong></p>
+<p class="sd-card-text"><strong>Files per Session</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sub-XXXXXXXX/ses-YYYYYYYYYY/emg/
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>├── sub-XXXXXXXX_ses-YYYYYYYYYY_task-typing_emg.edf
+├── sub-XXXXXXXX_ses-YYYYYYYYYY_task-typing_emg.json
+├── sub-XXXXXXXX_ses-YYYYYYYYYY_task-typing_channels.tsv
+├── sub-XXXXXXXX_ses-YYYYYYYYYY_task-typing_events.tsv
+└── sub-XXXXXXXX_ses-YYYYYYYYYY_electrodes.tsv
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Channel Configuration</strong></p>
+<p class="sd-card-text"><strong>Total channels</strong>: 32
+- EMG0-EMG15: Left wrist
+- EMG16-EMG31: Right wrist</p>
+<p class="sd-card-text"><strong>Channel naming</strong>: Unique across entire dataset (EMG0-EMG31)
+<strong>Electrode naming</strong>: E0-E15 (reused for left and right wrists)
+<strong>Reference</strong>: Bipolar (differential sensing)
+<strong>channels.tsv columns</strong>:
+- <code class="docutils literal notranslate"><span class="pre">name</span></code>: Channel identifier (EMG0-EMG31)
+- <code class="docutils literal notranslate"><span class="pre">type</span></code>: EMG
+- <code class="docutils literal notranslate"><span class="pre">units</span></code>: V
+- <code class="docutils literal notranslate"><span class="pre">signal_electrode</span></code>: Physical electrode name (E0-E15)
+- <code class="docutils literal notranslate"><span class="pre">reference</span></code>: bipolar
+- <code class="docutils literal notranslate"><span class="pre">group</span></code>: left or right (wrist)
+- <code class="docutils literal notranslate"><span class="pre">target_muscle</span></code>: forearm muscles</p>
+<p class="sd-card-text"><strong>electrodes.tsv columns</strong>:
+- <code class="docutils literal notranslate"><span class="pre">name</span></code>: Electrode identifier (E0-E15)
+- <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>: 3D coordinates (percent units, no decimals)
+- <code class="docutils literal notranslate"><span class="pre">coordinate_system</span></code>: leftForearm or rightForearm
+- <code class="docutils literal notranslate"><span class="pre">group</span></code>: left or right</p>
+<p class="sd-card-text"><strong>Events</strong></p>
+<p class="sd-card-text"><strong>events.tsv contains</strong>:
+- <strong>Keystroke events</strong>: Individual key-press and key-release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">type</span></code>: keystroke_X (where X is the key character)</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">latency</span></code>: Sample index of keystroke</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">duration</span></code>: Samples from press to release</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">key</span></code>: Character typed</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Prompt events</strong>: Text prompts shown to participant
+- <code class="docutils literal notranslate"><span class="pre">type</span></code>: prompt
+- <code class="docutils literal notranslate"><span class="pre">prompt_text</span></code>: Displayed text</p></li>
+</ul>
+<p class="sd-card-text"><strong>Total keystrokes</strong>: 5,262,671 across all sessions</p>
+<p class="sd-card-text"><strong>Coordinate Systems</strong></p>
+<p class="sd-card-text"><strong>Two separate coordinate systems</strong> (space entities):
+<strong>Left Forearm</strong> (<code class="docutils literal notranslate"><span class="pre">space-leftForearm_coordsystem.json</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EMGCoordinateSystem: Other
+EMGCoordinateUnits: percent
+X: USP → RSP (0-100%)
+Y: Right-hand rule perpendicular (limits: Olecranon Process → Cubital Fossa)
+Z: Midpoint RSP-USP → Lateral Humeral Epicondyle
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Right Forearm</strong> (<code class="docutils literal notranslate"><span class="pre">space-rightForearm_coordsystem.json</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EMGCoordinateSystem: Other
+EMGCoordinateUnits: percent
+X: RSP → USP (0-100%, reversed from left)
+Y: Right-hand rule perpendicular (limits: Olecranon Process → Cubital Fossa)
+Z: Midpoint RSP-USP → Lateral Humeral Epicondyle
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Anatomical landmarks</strong>:
+- RSP: Radial Styloid Process
+- USP: Ulnar Styloid Process
+- LHE: Lateral Humeral Epicondyle</p>
+<p class="sd-card-text"><strong>Note</strong>: Same physical device worn on both wrists with reversed differential polarity</p>
+<p class="sd-card-text"><strong>Signal Processing</strong></p>
+<p class="sd-card-text"><strong>Preprocessing Applied</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><strong>High-pass filtering</strong>: 40 Hz cutoff (removes DC drift, motion artifacts)</p></li>
+<li><p class="sd-card-text"><strong>Clock drift correction</strong>: Synchronization between devices and laptop</p></li>
+<li><p class="sd-card-text"><strong>Temporal alignment</strong>: Left/right wristband sample alignment (±0.5 ms)</p></li>
+<li><p class="sd-card-text"><strong>Irregular sampling handling</strong>: Resampling applied when deviation &gt;1%</p></li>
+</ol>
+<p class="sd-card-text"><strong>Signal Characteristics</strong></p>
+<p class="sd-card-text"><strong>Typical features</strong>:
+- Muscle activation precedes keystroke by ~tens of milliseconds
+- Different muscles activate for different fingers
+- “Co-articulation” effects: sEMG affected by adjacent keystrokes
+- Bigram/trigram context important for fast typists</p>
+<p class="sd-card-text"><strong>Receptive field</strong>: Models typically need ~1 second context</p>
+<p class="sd-card-text"><strong>Baseline Performance</strong></p>
+<p class="sd-card-text"><strong>Published Results (Sivakumar et al., 2024)</strong></p>
+<p class="sd-card-text"><strong>Generic Model</strong> (100 training users):
+- Validation CER: 52.10 ± 5.54% (with 6-gram LM)
+- Test CER: 51.78 ± 4.61% (with 6-gram LM)
+- <strong>Interpretation</strong>: Unusable without personalization</p>
+<p class="sd-card-text"><strong>Personalized Model</strong> (finetuned from generic):
+- Validation CER: 8.31 ± 3.19% (with 6-gram LM)
+- Test CER: 6.95 ± 3.61% (with 6-gram LM)
+- <strong>Best user</strong>: 3.16% CER
+- <strong>Usability threshold</strong>: ~10% CER</p>
+<p class="sd-card-text"><strong>Model architecture</strong>: Time Depth Separable ConvNets (TDS)
+<strong>Loss function</strong>: Connectionist Temporal Classification (CTC)
+<strong>Language model</strong>: 6-gram modified Kneser-Ney (trained on WikiText-103)</p>
+<p class="sd-card-text"><strong>Key Findings</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><strong>Generalization emerges at scale</strong>: 100+ users needed for meaningful representations</p></li>
+<li><p class="sd-card-text"><strong>Personalization essential</strong>: Generic model alone has &gt;50% CER</p></li>
+<li><p class="sd-card-text"><strong>Domain shift is severe</strong>: Cross-user variation much larger than cross-session</p></li>
+<li><p class="sd-card-text"><strong>No obvious user clusters</strong>: Every user requires individual adaptation</p></li>
+</ol>
+<p class="sd-card-text"><strong>Data Splits</strong></p>
+<p class="sd-card-text"><strong>Benchmark Setup (from paper)</strong></p>
+<p class="sd-card-text"><strong>Training set</strong>: 100 users (all sessions except 2 validation per user)
+<strong>Validation set</strong>: 2 sessions from each of 100 training users
+<strong>Test set</strong>: 8 held-out users</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Each test user: Multiple sessions split into train/val/test</p></li>
+<li><p class="sd-card-text">Used for personalization experiments</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Note</strong>: This split ensures test users don’t influence generic model hyperparameters</p>
+<p class="sd-card-text"><strong>Use Cases</strong></p>
+<p class="sd-card-text"><strong>Machine Learning</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Sequence-to-sequence learning</strong>: Similar to ASR but with different generative process</p></li>
+<li><p class="sd-card-text"><strong>Domain adaptation</strong>: Cross-user, cross-session generalization</p></li>
+<li><p class="sd-card-text"><strong>Transfer learning</strong>: Generic models with user-specific fine-tuning</p></li>
+<li><p class="sd-card-text"><strong>Few-shot learning</strong>: Data-efficient personalization</p></li>
+<li><p class="sd-card-text"><strong>Language modeling</strong>: Backspace-aware beam search decoding</p></li>
+</ul>
+<p class="sd-card-text"><strong>Neuroscience</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Motor control</strong>: Understand muscle coordination during fine motor tasks</p></li>
+<li><p class="sd-card-text"><strong>Motor learning</strong>: Track typing skill changes across sessions</p></li>
+<li><p class="sd-card-text"><strong>Neuromuscular variability</strong>: Study individual differences in muscle recruitment</p></li>
+</ul>
+<p class="sd-card-text"><strong>Applications</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Keyboard-free typing</strong>: Text entry without physical keyboard</p></li>
+<li><p class="sd-card-text"><strong>AR/VR interfaces</strong>: Text input for head-mounted displays</p></li>
+<li><p class="sd-card-text"><strong>Silent communication</strong>: Private text entry in public spaces</p></li>
+<li><p class="sd-card-text"><strong>Accessibility</strong>: Alternative input for users with limited mobility</p></li>
+</ul>
+<p class="sd-card-text"><strong>Known Issues and Limitations</strong></p>
+<p class="sd-card-text"><strong>By Design</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Touch typing required</strong>: Not representative of hunt-and-peck typists</p></li>
+<li><p class="sd-card-text"><strong>English only</strong>: Language-specific</p></li>
+<li><p class="sd-card-text"><strong>Physical keyboard</strong>: Not actual keyboard-free typing</p></li>
+<li><p class="sd-card-text"><strong>Typing style variation</strong>: Individual strategies differ (especially non-fluent typists)</p></li>
+<li><p class="sd-card-text"><strong>No demographic data</strong>: Age, sex, handedness not collected</p></li>
+</ul>
+<p class="sd-card-text"><strong>Technical</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Domain shift</strong>: Large variations across users and sessions</p></li>
+<li><p class="sd-card-text"><strong>Signal amplitude</strong>: Varies with typing force (not normalized)</p></li>
+<li><p class="sd-card-text"><strong>Backspace handling</strong>: More complex than speech (can modify history)</p></li>
+<li><p class="sd-card-text"><strong>Hardware unavailable</strong>: sEMG-RD not commercially available</p></li>
+</ul>
+<p class="sd-card-text"><strong>Data Quality</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Irregular sampling</strong>: Some sessions required resampling (up to 9290% deviation detected)</p></li>
+<li><p class="sd-card-text"><strong>Electrode placement</strong>: Intentionally varies across sessions (creates realistic challenge)</p></li>
+<li><p class="sd-card-text"><strong>Session length</strong>: Varies by typing speed (9.5-47.5 min)</p></li>
+</ul>
+<p class="sd-card-text"><strong>Access and Contact</strong></p>
+<p class="sd-card-text"><strong>Original data</strong>: <a class="github reference external" href="https://github.com/facebookresearch/emg2qwerty">facebookresearch/emg2qwerty</a>
+<strong>BIDS conversion</strong>: Custom MATLAB tools using EEGLAB BIDS plugin
+<strong>Data curator</strong>: Yahya Shirazi, SCCN, INC, UCSD
+<strong>Contact</strong>: See original publication for corresponding author</p>
+<p class="sd-card-text"><strong>License</strong></p>
+<p class="sd-card-text">Non-Commercial, Share Alike CC-BY-NC-SA 4.0</p>
+<p class="sd-card-text"><strong>Citation</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sivakumar, V., Seely, J., Du, A., Bittner, S.R., Berenzweig, A.,
+Bolarinwa, A., Gramfort, A., &amp; Mandel, M.I. (2024).
+emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography.
+arXiv:2410.20081. https://github.com/facebookresearch/emg2qwerty
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Data Curator</strong></p>
+<p class="sd-card-text"><strong>Yahya Shirazi</strong>
+SCCN (Swartz Center for Computational Neuroscience)
+INC (Institute for Neural Computation)
+University of California San Diego</p>
+<p class="sd-card-text"><strong>Version History</strong></p>
+<p class="sd-card-text"><strong>v1.0 (2025-10-01): Initial BIDS conversion</strong></p>
+<p class="sd-card-text"><strong>BIDS Version</strong>: 1.11 | <strong>EMG-BIDS</strong>: BEP-042 | <strong>Updated</strong>: Oct 1, 2025</p>
+</div>
+</details></section>
+<section id="dataset-information">
+<h2>Dataset Information<a class="headerlink" href="#dataset-information" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Dataset ID</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NM000104</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Title</p></td>
+<td><p>emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography</p></td>
+</tr>
+<tr class="row-odd"><td><p>Author (year)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sivakumar2024</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Canonical</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>Importable as</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NM000104</span></code>, <code class="docutils literal notranslate"><span class="pre">Sivakumar2024</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Year</p></td>
+<td><p>2024</p></td>
+</tr>
+<tr class="row-odd"><td><p>Authors</p></td>
+<td><p>Viswanath Sivakumar, Jeffrey Seely, Alan Du, Sean R. Bittner, Adam Berenzweig, Anuoluwapo Bolarinwa, Alexandre Gramfort, Michael I. Mandel</p></td>
+</tr>
+<tr class="row-even"><td><p>License</p></td>
+<td><p>CC-BY-NC-SA-4.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Citation / DOI</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.82901/nemar.nm000104">10.82901/nemar.nm000104</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Source links</p></td>
+<td><p><a class="reference external" href="https://openneuro.org/datasets/nm000104">OpenNeuro</a> | <a class="reference external" href="https://nemar.org/dataexplorer/detail?dataset_id=nm000104">NeMAR</a> | <a class="reference external" href="https://nemar.org/dataexplorer/detail/nm000104">Source URL</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm">
+<summary class="sd-summary-title sd-card-header sd-bg-light">
+<span class="sd-summary-text">Copy-paste BibTeX</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@dataset</span><span class="p">{</span><span class="nl">nm000104</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Viswanath Sivakumar and Jeffrey Seely and Alan Du and Sean R. Bittner and Adam Berenzweig and Anuoluwapo Bolarinwa and Alexandre Gramfort and Michael I. Mandel}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.82901/nemar.nm000104}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.82901/nemar.nm000104}</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><div class="tip admonition">
+<p class="admonition-title">Found an issue with this dataset?</p>
+<p>If you encounter any problems with this dataset (missing files, incorrect metadata,
+loading errors, etc.), please let us know!</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://github.com/eegdash/EEGDash/issues/new?title=%5BDataset%5D%20Issue%20with%20NM000104&amp;body=%23%23%20Dataset%0A%0A-%20%2A%2ADataset%20ID%3A%2A%2A%20NM000104%0A-%20%2A%2ATitle%3A%2A%2A%20emg2qwerty%3A%20A%20Large%20Dataset%20with%20Baselines%20for%20Touch%20Typing%20using%20Surface%20Electromyography%0A%0A%23%23%20Issue%20Description%0A%0APlease%20describe%20the%20issue%20you%20encountered%20with%20this%20dataset%3A%0A%0A%23%23%20Steps%20to%20Reproduce%0A%0A1.%20%0A2.%20%0A3.%20%0A%0A%23%23%20Expected%20Behavior%0A%0A%0A%23%23%20Additional%20Context%0A%0A&amp;labels=dataset"><span>Report an Issue on GitHub</span></a></p>
+</div>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 highlight-primary docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Subjects &amp; recordings</div>
+<ul class="simple">
+<li><p class="sd-card-text">Subjects: 108</p></li>
+<li><p class="sd-card-text">Recordings: 1136</p></li>
+<li><p class="sd-card-text">Tasks: 1</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 highlight-secondary docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Channels &amp; sampling rate</div>
+<ul class="simple">
+<li><p class="sd-card-text">Channels: 32</p></li>
+<li><p class="sd-card-text">Sampling rate (Hz): 2000.0</p></li>
+<li><p class="sd-card-text">Duration (hours): 346.3244476388889</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 highlight-tertiary docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Tags</div>
+<ul class="simple">
+<li><p class="sd-card-text">Pathology: Not specified</p></li>
+<li><p class="sd-card-text">Modality: —</p></li>
+<li><p class="sd-card-text">Type: —</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Files &amp; format</div>
+<ul class="simple">
+<li><p class="sd-card-text">Size on disk: 223.3 GB</p></li>
+<li><p class="sd-card-text">File count: 1136</p></li>
+<li><p class="sd-card-text">Format: BIDS</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+License &amp; citation</div>
+<ul class="simple">
+<li><p class="sd-card-text">License: CC-BY-NC-SA-4.0</p></li>
+<li><p class="sd-card-text">DOI: 10.82901/nemar.nm000104</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-border-1 docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Provenance</div>
+<ul class="simple">
+<li><p class="sd-card-text">Source: nemar</p></li>
+<li><p class="sd-card-text">OpenNeuro: <a class="reference external" href="https://openneuro.org/datasets/nm000104">nm000104</a></p></li>
+<li><p class="sd-card-text">NeMAR: <a class="reference external" href="https://nemar.org/dataexplorer/detail?dataset_id=nm000104">nm000104</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="electrode-layout">
+<h2>Electrode Layout<a class="headerlink" href="#electrode-layout" title="Link to this heading">#</a></h2>
+<details class="electrode-explorer">
+  <summary>Electrode layout — EMG · 32 sensors — 32 channels</summary>
+  <iframe
+    data-src="https://electrodes.eegdash.org/?montage=ad61c8e3725bc474&embed=1"
+    loading="lazy"
+    width="100%" height="640"
+    style="border: 1px solid var(--pst-color-border); border-radius: 8px; max-width: 900px; display: block;"
+    title="Topomap of EMG · 32 sensors"
+    referrerpolicy="no-referrer">
+  </iframe>
+</details></section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">NM000104</span></code> class to access this dataset programmatically.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">eegdash.dataset.</span></span><span class="sig-name descname"><span class="pre">NM000104</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_bucket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/eegdash/EEGDash/blob/develop/eegdash/dataset/dataset.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eegdash.dataset.NM000104" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="eegdash.EEGDashDataset.html#eegdash.EEGDashDataset" title="eegdash.dataset.dataset.EEGDashDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">EEGDashDataset</span></code></a></p>
+<p>emg2qwerty: A Large Dataset with Baselines for Touch Typing using Surface Electromyography</p>
+<dl class="field-list simple">
+<dt class="field-odd">Study<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">nm000104</span></code> (NeMAR)</p>
+</dd>
+<dt class="field-even">Author (year)<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Sivakumar2024</span></code></p>
+</dd>
+<dt class="field-odd">Canonical<span class="colon">:</span></dt>
+<dd class="field-odd"><p>—</p>
+</dd>
+</dl>
+<p>Also importable as: <code class="docutils literal notranslate"><span class="pre">NM000104</span></code>, <code class="docutils literal notranslate"><span class="pre">Sivakumar2024</span></code>.</p>
+<p>Modality: <code class="docutils literal notranslate"><span class="pre">emg</span></code>.
+Subjects: 108; recordings: 1136; tasks: 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cache_dir</strong> (<em>str</em><em> | </em><em>Path</em>) – Directory where data are cached locally.</p></li>
+<li><p><strong>query</strong> (<em>dict</em><em> | </em><em>None</em>) – Additional MongoDB-style filters to AND with the dataset selection.
+Must not contain the key <code class="docutils literal notranslate"><span class="pre">dataset</span></code>.</p></li>
+<li><p><strong>s3_bucket</strong> (<em>str</em><em> | </em><em>None</em>) – Base S3 bucket used to locate the data.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional keyword arguments forwarded to <a class="reference internal" href="eegdash.EEGDashDataset.html#eegdash.EEGDashDataset" title="eegdash.dataset.dataset.EEGDashDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">EEGDashDataset</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104.data_dir">
+<span class="sig-name descname"><span class="pre">data_dir</span></span><a class="headerlink" href="#eegdash.dataset.NM000104.data_dir" title="Link to this definition">#</a></dt>
+<dd><p>Local dataset cache directory (<code class="docutils literal notranslate"><span class="pre">cache_dir</span> <span class="pre">/</span> <span class="pre">dataset_id</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104.query">
+<span class="sig-name descname"><span class="pre">query</span></span><a class="headerlink" href="#eegdash.dataset.NM000104.query" title="Link to this definition">#</a></dt>
+<dd><p>Merged query with the dataset filter applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104.records">
+<span class="sig-name descname"><span class="pre">records</span></span><a class="headerlink" href="#eegdash.dataset.NM000104.records" title="Link to this definition">#</a></dt>
+<dd><p>Metadata records used to build the dataset, if pre-fetched.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict] | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<p>Each item is a recording; recording-level metadata are available via <code class="docutils literal notranslate"><span class="pre">dataset.description</span></code>.
+<code class="docutils literal notranslate"><span class="pre">query</span></code> supports MongoDB-style filters on fields in <code class="docutils literal notranslate"><span class="pre">ALLOWED_QUERY_FIELDS</span></code> and is combined with the dataset filter.
+Dataset-specific caveats are not provided in the summary metadata.</p>
+<p class="rubric">References</p>
+<p>OpenNeuro dataset: <a class="reference external" href="https://openneuro.org/datasets/nm000104">https://openneuro.org/datasets/nm000104</a>
+NeMAR dataset: <a class="reference external" href="https://nemar.org/dataexplorer/detail?dataset_id=nm000104">https://nemar.org/dataexplorer/detail?dataset_id=nm000104</a>
+DOI: <a class="reference external" href="https://doi.org/10.82901/nemar.nm000104">https://doi.org/10.82901/nemar.nm000104</a></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">eegdash.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">NM000104</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">NM000104</span><span class="p">(</span><span class="n">cache_dir</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">recording</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raw</span> <span class="o">=</span> <span class="n">recording</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_bucket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/eegdash/EEGDash/blob/develop/eegdash/dataset/registry.py#L135-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eegdash.dataset.NM000104.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegdash.dataset.NM000104.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/eegdash/EEGDash/blob/develop/eegdash/dataset/dataset.py#L752-L767"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#eegdash.dataset.NM000104.save" title="Link to this definition">#</a></dt>
+<dd><p>Save the dataset to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em>) – Destination file path.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em><em>, </em><em>default False</em>) – If True, overwrite existing file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">eegdash.dataset.EEGDashDataset</span></code></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">eegdash.dataset</span></code></p></li>
+<li><p><a class="reference external" href="https://openneuro.org/datasets/nm000104">OpenNeuro dataset page</a></p></li>
+<li><p><a class="reference external" href="https://nemar.org/dataexplorer/detail?dataset_id=nm000104">NeMAR dataset page</a></p></li>
+<li><p><a class="reference internal" href="eegdash.dataset.NM000105.html"><span class="doc">eegdash.dataset.NM000105</span></a></p></li>
+<li><p><a class="reference internal" href="eegdash.dataset.NM000106.html"><span class="doc">eegdash.dataset.NM000106</span></a></p></li>
+<li><p><a class="reference internal" href="eegdash.dataset.NM000107.html"><span class="doc">eegdash.dataset.NM000107</span></a></p></li>
+<li><p><a class="reference internal" href="eegdash.dataset.NM000108.html"><span class="doc">eegdash.dataset.NM000108</span></a></p></li>
+<li><p><a class="reference internal" href="eegdash.dataset.NM000155.html"><span class="doc">eegdash.dataset.NM000155</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="eegdash.dataset.NM000103.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NM000103: eeg dataset, 447 subjects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="eegdash.dataset.NM000105.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NM000105: emg dataset, 100 subjects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025-2026, EEG Dash Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
