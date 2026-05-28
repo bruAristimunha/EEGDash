@@ -1,7 +1,9 @@
-"""Validation utilities for injection scripts.
+"""Validation utilities for the ingestion pipeline.
 
-This module re-exports the validation functions from 4_validate_output.py
-for use in other ingestion scripts.
+Canonical home for ``validate_storage_url`` / ``validate_record`` /
+``validate_dataset`` / ``validate_digestion_output`` /
+``validate_pre_digestion``. ``4_validate_output.py`` is a thin CLI wrapper
+that imports from here.
 """
 
 import json
@@ -11,7 +13,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from eegdash.schemas import DatasetModel, RecordModel
+from eegdash.schemas import DatasetModel, ManifestFileModel, ManifestModel, RecordModel
 
 # Valid storage URL patterns per source
 VALID_STORAGE_PATTERNS = {
@@ -91,7 +93,7 @@ class ValidationResult:
         self.zip_placeholder_datasets = []
         self.data_quality_issues = []  # Datasets with missing nchans/sampling_frequency
 
-    def add_error(self, dataset: str, message: str, field: str = None):
+    def add_error(self, dataset: str, message: str, field: str | None = None):
         self.errors.append(
             {
                 "dataset": dataset,
@@ -100,7 +102,7 @@ class ValidationResult:
             }
         )
 
-    def add_warning(self, dataset: str, message: str, field: str = None):
+    def add_warning(self, dataset: str, message: str, field: str | None = None):
         self.warnings.append(
             {
                 "dataset": dataset,
@@ -291,7 +293,8 @@ def validate_digestion_output(
         verbose: Print progress information
         strict: Treat warnings as errors
 
-    Returns:
+    Returns
+    -------
         ValidationResult with all findings
 
     """
@@ -330,7 +333,11 @@ def validate_digestion_output(
 
             except json.JSONDecodeError as e:
                 result.add_error(dataset_id, f"Invalid JSON in dataset file: {e}")
-            except Exception as e:
+            except (OSError, KeyError, ValueError, TypeError) as e:
+                # OSError: file disappeared / permission. KeyError: missing
+                # 'datasets' or other expected fields. ValueError/TypeError:
+                # validate_dataset received an unexpected shape. All
+                # accumulate into result.errors rather than crashing.
                 result.add_error(dataset_id, f"Error reading dataset: {e}")
 
         # Validate records
@@ -385,7 +392,9 @@ def validate_digestion_output(
 
             except json.JSONDecodeError as e:
                 result.add_error(dataset_id, f"Invalid JSON in records file: {e}")
-            except Exception as e:
+            except (OSError, KeyError, ValueError, TypeError) as e:
+                # Same rationale as the dataset-file handler above. Bad
+                # records accumulate; we don't crash the whole digest.
                 result.add_error(dataset_id, f"Error reading records: {e}")
 
         # Flag empty datasets
@@ -406,4 +415,94 @@ def validate_digestion_output(
     result.source_distribution = dict(sources)
     result.modality_distribution = dict(modalities)
 
+    return result
+
+
+def validate_pre_digestion(input_dir: Path, verbose: bool = False) -> ValidationResult:
+    """Pre-digestion validation: walk ``manifest.json`` files under
+    ``input_dir`` and flag manifests with no recognised neurophysiology
+    data file (CTF ``.ds`` directories counted as one).
+    """
+    result = ValidationResult()
+
+    if not input_dir.exists():
+        result.add_error("", f"Input directory does not exist: {input_dir}")
+        return result
+
+    dataset_dirs = [
+        d for d in input_dir.iterdir() if d.is_dir() and (d / "manifest.json").exists()
+    ]
+
+    if verbose:
+        print(f"Found {len(dataset_dirs)} manifests to check")
+
+    sources = Counter()
+
+    for dataset_dir in dataset_dirs:
+        dataset_id = dataset_dir.name
+        manifest_path = dataset_dir / "manifest.json"
+
+        try:
+            with open(manifest_path) as f:
+                manifest = json.load(f)
+
+            try:
+                manifest_model = ManifestModel.model_validate(manifest)
+            except ValidationError as exc:
+                _add_pydantic_errors(
+                    result, dataset_id=dataset_id, exc=exc, prefix="manifest"
+                )
+                continue
+
+            source = manifest_model.source or "unknown"
+            sources[source] += 1
+            result.stats["datasets_checked"] += 1
+
+            files = manifest_model.files
+
+            data_file_count = 0
+            ctf_ds_dirs = set()
+
+            for f in files:
+                if isinstance(f, str):
+                    filepath = f
+                elif isinstance(f, ManifestFileModel):
+                    filepath = f.path_or_name()
+                else:
+                    filepath = ""
+                filepath_lower = filepath.lower()
+
+                # CTF datasets are directories; count files inside .ds/ once.
+                if ".ds/" in filepath_lower:
+                    ds_idx = filepath_lower.index(".ds/") + 3
+                    ds_path = filepath[:ds_idx]
+                    ctf_ds_dirs.add(ds_path)
+                    continue
+
+                for ext in NEURO_EXTENSIONS:
+                    if filepath_lower.endswith(ext):
+                        data_file_count += 1
+                        break
+
+            data_file_count += len(ctf_ds_dirs)
+            result.stats["records_checked"] += data_file_count
+
+            if data_file_count == 0:
+                result.stats["empty_datasets"] += 1
+                result.empty_datasets.append(f"{dataset_id} ({source})")
+                result.add_warning(
+                    dataset_id,
+                    f"No recognized neurophysiology files in manifest "
+                    f"({len(files)} total files)",
+                )
+
+            if verbose and data_file_count > 0:
+                print(f"  {dataset_id}: {data_file_count} data files")
+
+        except json.JSONDecodeError as e:
+            result.add_error(dataset_id, f"Invalid JSON in manifest: {e}")
+        except (OSError, KeyError, ValueError, TypeError) as e:
+            result.add_error(dataset_id, f"Error reading manifest: {e}")
+
+    result.source_distribution = dict(sources)
     return result
