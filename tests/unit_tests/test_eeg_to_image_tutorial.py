@@ -74,6 +74,7 @@ def test_eeg_to_image_start_kit_has_competition_boundary_and_readable_diagnostic
 
     assert "https://neural-interfaces26.github.io/startkit.html" in source
     assert "Top-5 retrieval accuracy" in source
+    assert "frozen DINOv2-giant embeddings" in source
     assert "unseen stimuli" in source
     assert "not an official train/test split" in source
     assert "competition_map = pd.DataFrame" in source
@@ -93,6 +94,7 @@ def test_eeg_to_image_gallery_header_describes_only_the_nm000134_start_kit():
     assert "NM000134" in header
     assert "tutorial_eeg_to_image_start_kit.py" in header
     assert "NeuralBench" in header
+    assert "https://neural-interfaces26.github.io/startkit.html" in header
     assert "tutorial_bci_start_kit.py" not in header
 
 

@@ -97,7 +97,7 @@ competition_map = pd.DataFrame(
         {
             "Question": "What is the outcome?",
             "EEGDash companion": "Verify event, epoch, and stimulus alignment",
-            "Official Track 01": "Rank held-out candidate images from frozen DINOv2 embeddings",
+            "Official Track 01": "Rank held-out candidate images from frozen DINOv2-giant embeddings",
         },
         {
             "Question": "What establishes performance?",
