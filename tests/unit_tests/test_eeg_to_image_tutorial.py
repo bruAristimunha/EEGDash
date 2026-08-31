@@ -68,6 +68,23 @@ def test_eeg_to_image_start_kit_uses_the_real_nm000134_test_record():
     assert "# Step 5." in source
 
 
+def test_eeg_to_image_start_kit_has_competition_boundary_and_readable_diagnostics():
+    """Protect the competition handoff and real-data teaching checkpoints."""
+    source = TUTORIAL.read_text(encoding="utf-8")
+
+    assert "https://neural-interfaces26.github.io/startkit.html" in source
+    assert "Top-5 retrieval accuracy" in source
+    assert "unseen stimuli" in source
+    assert "not an official train/test split" in source
+    assert "competition_map = pd.DataFrame" in source
+    assert "anchor_event_table = pd.DataFrame" in source
+    assert "interval_axis.hist(" in source
+    assert "repeat_axis.bar(" in source
+    assert "find the selected event" in source
+    assert "cadence_axis.plot(" not in source
+    assert "coverage_axis.bar(" not in source
+
+
 def test_eeg_to_image_gallery_header_describes_only_the_nm000134_start_kit():
     """A clean Sphinx-Gallery checkout needs the committed RST header."""
     assert README.is_file()

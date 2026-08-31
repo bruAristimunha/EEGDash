@@ -1,17 +1,16 @@
-"""EEG-to-image alignment with one real NM000134 BIDS record
-==============================================================
+"""EEG-to-image competition companion with one real NM000134 BIDS record
+=========================================================================
 
 **Difficulty 2** | **Runtime: 3–5 min on first run** | **Compute: CPU**
 
-This start kit inspects the genuine compact test-run recording
+This competition companion inspects the genuine compact test-run recording
 "nm000134/sub-09/ses-01/task-images/run-02". It materializes one 32-channel,
 256 Hz EDF and parses the 936 "stim_test" BIDS rows that reference 200 real
 image IDs. The event stream is deliberately fast, making it useful for
 checking timing and stimulus coverage before building an EEG-to-image method.
 
-This is an inspection/start-kit for a test-run EEG-to-image alignment, not an
-official train/test split, model, score, or submission. NeuralBench owns those
-release-level operations.
+This is a local alignment check, not an official train/test split, model,
+score, or submission. NeuralBench owns those release-level operations.
 
 Keywords: EEG2026, EEG-to-image, visual decoding, BIDS, NEMAR, EEGDash
 """
@@ -72,6 +71,42 @@ SAMPLING_FREQUENCY = 256.0
 TRACE_BEFORE_SECONDS = 0.25
 TRACE_AFTER_SECONDS = 1.25
 CACHE_DIR = get_default_cache_dir()
+OFFICIAL_START_KIT_URL = "https://neural-interfaces26.github.io/startkit.html"
+
+
+# %% [markdown]
+# Orient: local alignment versus the official competition
+# --------------------------------------------------------
+#
+# **Predict.** This page verifies that an event, its EEG epoch, and its BIDS
+# stimulus agree. Track 01 predicts a ranked image retrieval result from one
+# EEG epoch; it evaluates unseen stimuli with Top-5 retrieval accuracy.
+#
+# **Modify.** Do not turn this one-record check into a local benchmark: it has
+# no score or split. The official workflow begins at
+# [the NeuralBench start kit](https://neural-interfaces26.github.io/startkit.html).
+
+# %%
+competition_map = pd.DataFrame(
+    [
+        {
+            "Question": "What enters the workflow?",
+            "EEGDash companion": "One real NM000134 BIDS recording",
+            "Official Track 01": "One EEG epoch",
+        },
+        {
+            "Question": "What is the outcome?",
+            "EEGDash companion": "Verify event, epoch, and stimulus alignment",
+            "Official Track 01": "Rank held-out candidate images from frozen DINOv2 embeddings",
+        },
+        {
+            "Question": "What establishes performance?",
+            "EEGDash companion": "No score or split",
+            "Official Track 01": "unseen stimuli; Top-5 retrieval accuracy",
+        },
+    ]
+)
+competition_map
 
 
 # %% [markdown]
@@ -132,7 +167,7 @@ pd.DataFrame(
 ).round({"duration (s)": 3, "sample rate (Hz)": 0})
 
 # %% [markdown]
-# **Investigate.** The record is a full 255-second EDF, not a fabricated
+# **Run.** The record is a full 255-second EDF, not a fabricated
 # excerpt. Its BIDS events sidecar supplies the image references used below.
 
 # %% [markdown]
@@ -183,86 +218,76 @@ pd.DataFrame(
     }
 ).round({"median event interval (s)": 3, "median repeats per image": 1})
 
-# %% [markdown]
-# Step 3. Diagnose real event cadence and image coverage
-# -------------------------------------------------------
-#
-# **Run.** The left panel exposes the actual inter-event timing, including
-# pauses in the rapid stream. The right panel shows how often each real image
-# ID appears in this one recording. It is an event-sidecar audit, not a model
-# or a competition score.
-
-# %%
-fig, (cadence_axis, coverage_axis) = plt.subplots(1, 2, figsize=(11, 4.3))
-style_figure(
-    fig,
-    title="Real NM000134 stimulus cadence and image coverage",
-    subtitle="936 BIDS stimulus events across 200 image IDs in one test-run EDF",
-    source="NEMAR nm000134; quantities are parsed from this recording's events.tsv.",
-    grid_axis="y",
-)
-fig.subplots_adjust(top=0.72, bottom=0.24, wspace=0.34)
-
-cadence_axis.plot(
-    np.arange(1, len(stim_events)),
-    event_intervals_s.to_numpy(),
-    color=EEGDASH_BLUE,
-    lw=0.8,
-)
-cadence_axis.axhline(
-    event_intervals_s.median(),
-    color=EEGDASH_ORANGE,
-    lw=1.1,
-    linestyle="--",
-    label=f"median {event_intervals_s.median():.3f} s",
-)
-cadence_axis.set(
-    xlabel="Stimulus-event order",
-    ylabel="Seconds since previous stimulus",
-    title="Observed event cadence",
-)
-cadence_axis.legend(frameon=False, loc="upper right")
-
-coverage_axis.bar(
-    image_repeats.index,
-    image_repeats.to_numpy(),
-    width=0.9,
-    color=EEGDASH_MINT,
-    edgecolor="none",
-)
-coverage_axis.axhline(
-    image_repeats.mean(),
-    color=EEGDASH_PURPLE,
-    lw=1.1,
-    linestyle="--",
-    label=f"mean {image_repeats.mean():.2f} repeats",
-)
-coverage_axis.set(
-    xlim=(image_repeats.index.min() - 1, image_repeats.index.max() + 1),
-    xlabel="BIDS image ID",
-    ylabel="Stimulus events",
-    title="Coverage of referenced images",
-)
-coverage_axis.legend(frameon=False, loc="upper right")
-plt.show()
-
-# %% [markdown]
-# Step 4. Inspect a short EEG trace anchored to a real image event
-# -----------------------------------------------------------------
-#
-# We choose the first "stim_test" row with enough recorded context on both
-# sides, then index the EDF with its BIDS "sample" value. This is a signal
-# check around one observed image presentation, not an embedding, target, or
-# prediction. For display only, we median-center each displayed channel; the
-# raw EDF remains unchanged and amplitudes remain in µV.
-
-# %%
+stim_events = stim_events.reset_index(drop=True)
 usable_events = stim_events.loc[
     (stim_events["onset"] >= TRACE_BEFORE_SECONDS)
     & (stim_events["onset"] + TRACE_AFTER_SECONDS <= recording_duration_s)
 ]
 assert not usable_events.empty
 anchor_event = usable_events.iloc[0]
+anchor_event_table = pd.DataFrame(
+    [
+        {
+            "event order": int(anchor_event.name) + 1,
+            "image ID": int(anchor_event["image_id"]),
+            "onset (s)": float(anchor_event["onset"]),
+            "BIDS sample": int(anchor_event["sample"]),
+        }
+    ]
+).round({"onset (s)": 3})
+anchor_event_table
+
+# %% [markdown]
+# Step 3. Investigate real event intervals and image repeats
+# -----------------------------------------------------------
+#
+# **Investigate.** The table identifies the selected event used in the trace
+# below. The left panel makes rapid presentation intervals and pauses readable;
+# the right panel asks whether image IDs have comparable repeat counts.
+
+# %%
+interval_bins_s = np.arange(0, np.ceil(event_intervals_s.max()) + 0.1, 0.1)
+repeat_counts = image_repeats.value_counts().sort_index()
+
+fig, (interval_axis, repeat_axis) = plt.subplots(1, 2, figsize=(11, 4.3))
+style_figure(
+    fig,
+    title="Real NM000134 stimulus intervals and image repeats",
+    subtitle="936 BIDS stimulus events across 200 image IDs in one test-run EDF",
+    source="NEMAR nm000134; quantities are parsed from this recording's events.tsv.",
+    grid_axis="y",
+)
+fig.subplots_adjust(top=0.72, bottom=0.24, wspace=0.34)
+
+interval_axis.hist(
+    event_intervals_s.to_numpy(),
+    bins=interval_bins_s,
+    color=EEGDASH_BLUE,
+    edgecolor="white",
+)
+interval_axis.axvline(event_intervals_s.median(), color=EEGDASH_ORANGE, linestyle="--")
+interval_axis.set(xlabel="Seconds since previous stimulus", ylabel="Event intervals")
+
+repeat_axis.bar(
+    repeat_counts.index,
+    repeat_counts.to_numpy(),
+    color=EEGDASH_MINT,
+    edgecolor="none",
+)
+repeat_axis.set(xlabel="Repeats per image ID", ylabel="Number of image IDs")
+plt.show()
+
+# %% [markdown]
+# Step 4. Inspect a short EEG trace anchored to a real image event
+# -----------------------------------------------------------------
+#
+# **Modify.** The trace uses the event in ``anchor_event_table``: its selected
+# image ID, BIDS sample, and onset identify the same presentation. This is a
+# signal check, not an embedding, target, or prediction. For display only, we
+# median-center each displayed channel; the raw EDF remains unchanged and
+# amplitudes remain in µV.
+
+# %%
 anchor_sample = int(anchor_event["sample"])
 pre_samples = int(round(TRACE_BEFORE_SECONDS * sfreq))
 post_samples = int(round(TRACE_AFTER_SECONDS * sfreq))
@@ -332,26 +357,26 @@ raw.close()
 # Step 5. Inspect the EDF and its BIDS stimulus mapping in EEGDash
 # -----------------------------------------------------------------
 #
-# The inline viewer opens the same real EDF and BIDS sidecars. When you pan or
-# move its cursor, it chooses the BIDS image nearest the rendered EEG
-# window/cursor. The viewer materializes only event-referenced BIDS assets
-# into the local cache and embeds them in the local viewer payload; it does
-# not commit or substitute JPEGs. Fresh materialization is pinned to the 200
-# referenced image assets from the NM000134 BIDS v1.0.1 Git release, at
-# immutable commit "61b04adf7bca47f220b85f3744a610b44046c62f", rather than a
-# mutable HEAD branch. Pre-existing local BIDS stimulus files are intentionally
-# reused.
+# **Verify.** The inline viewer opens the same real EDF and BIDS sidecars.
+# Your task: find the selected event from ``anchor_event_table``, position the
+# cursor/window there, and confirm that the rendered stimulus matches its BIDS
+# image ID. The viewer materializes only event-referenced BIDS assets into the
+# local cache and embeds them in the local viewer payload; it does not commit
+# or substitute JPEGs. Fresh materialization is pinned to the 200 referenced
+# image assets from the NM000134 BIDS v1.0.1 Git release, at immutable commit
+# "61b04adf7bca47f220b85f3744a610b44046c62f", rather than a mutable HEAD
+# branch. Pre-existing local BIDS stimulus files are intentionally reused.
 
 # %%
 dataset.plot(index=0, height=520)
 
 # %% [markdown]
-# Result: move release-level benchmarking to NeuralBench
-# -------------------------------------------------------
+# Continue: move release-level benchmarking to NeuralBench
+# ---------------------------------------------------------
 #
-# EEGDash has provided one real EDF, an event cadence/coverage audit, a short
-# event-anchored EEG trace, and an interactive BIDS stimulus inspection. This
-# is not an official train/test split, model, score, or submission.
-# NeuralBench owns the official split, model, score, and submission workflow
-# for the release; use its task tooling for those operations rather than
-# inferring them from this single-record inspection.
+# - [x] Local event, epoch, and viewer stimulus alignment checks are complete.
+# - [x] No official score or split has been claimed from this record.
+# - [ ] Run ``pip install neuralbench`` and follow the [official start kit](https://neural-interfaces26.github.io/startkit.html) for official data, split, evaluation, and submission.
+#
+# NeuralBench—not this record—owns the official data, split, evaluation, and
+# submission workflow.
