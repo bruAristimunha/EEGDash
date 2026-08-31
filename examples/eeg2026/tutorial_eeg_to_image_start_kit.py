@@ -84,7 +84,7 @@ OFFICIAL_START_KIT_URL = "https://neural-interfaces26.github.io/startkit.html"
 #
 # **Modify.** Do not turn this one-record check into a local benchmark: it has
 # no score or split. The official workflow begins at
-# [the NeuralBench start kit](https://neural-interfaces26.github.io/startkit.html).
+# `the NeuralBench start kit <https://neural-interfaces26.github.io/startkit.html>`_.
 
 # %%
 competition_map = pd.DataFrame(
@@ -376,7 +376,7 @@ dataset.plot(index=0, height=520)
 #
 # - [x] Local event, epoch, and viewer stimulus alignment checks are complete.
 # - [x] No official score or split has been claimed from this record.
-# - [ ] Run ``pip install neuralbench`` and follow the [official start kit](https://neural-interfaces26.github.io/startkit.html) for official data, split, evaluation, and submission.
+# - [ ] Run ``pip install neuralbench`` and follow the `official start kit <https://neural-interfaces26.github.io/startkit.html>`_ for official data, split, evaluation, and submission.
 #
 # NeuralBench—not this record—owns the official data, split, evaluation, and
 # submission workflow.

@@ -73,6 +73,9 @@ def test_eeg_to_image_start_kit_has_competition_boundary_and_readable_diagnostic
     source = TUTORIAL.read_text(encoding="utf-8")
 
     assert "https://neural-interfaces26.github.io/startkit.html" in source
+    assert "`the NeuralBench start kit <https://neural-interfaces26.github.io/startkit.html>`_" in source
+    assert "`official start kit <https://neural-interfaces26.github.io/startkit.html>`_" in source
+    assert "](https://neural-interfaces26.github.io/startkit.html)" not in source
     assert "Top-5 retrieval accuracy" in source
     assert "frozen DINOv2-giant embeddings" in source
     assert "unseen stimuli" in source
