@@ -338,7 +338,7 @@ EX_DIR = "../../examples"  # relative to docs/source
 # subdirs like ``00_start_here/`` rather than ``plot_*.py`` files at the
 # top), so we list each tutorial category as its own gallery root and pair
 # it with a matching `gallery_dirs` entry. Same pattern for the leaf-only
-# directories (`how_to`, `applied`, `eeg2025`, `hpc`, `dev_scripts`).
+# directories (`how_to`, `applied`, `eeg2025`, `eeg2026`, `hpc`, `dev_scripts`).
 TUTORIAL_SUBDIRS = [
     "00_start_here",
     "10_core_workflow",

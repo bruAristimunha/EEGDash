@@ -207,10 +207,12 @@ def _write_auto_examples_root_index(app):
         ),
         (
             "eeg2026",
-            "EEG-to-image 2026",
-            "A real NM000134 EEG-to-image alignment start kit with BIDS "
-            "stimulus inspection in EEGDash. Official benchmark work "
-            "belongs to NeuralBench.",
+            "EEG/EMG Foundation Challenge 2026",
+            "Start with three real-data EEGDash lessons: a small Zhou2016 "
+            "cross-session BCI audit, a compact EMG2Pose recording with "
+            "real EMG/joint traces and the inline viewer, then a Cassette "
+            "sleep-onset audit built around a real first-N2 event. Each "
+            "stops before modeling and hands benchmark work to NeuralBench.",
         ),
         (
             "hpc",
@@ -232,10 +234,9 @@ def _write_auto_examples_root_index(app):
         "the **Concepts** chapter explains *why* a decision matters, the "
         "API reference enumerates every public symbol, and the gallery "
         "you're reading shows the choices in motion against real BIDS-"
-        "curated EEG records. Every script under ``examples/`` is a "
-        "sphinx-gallery tutorial -- meaning it executes top to bottom on "
-        "every documentation build, and the captured first figure is the "
-        "thumbnail you see below.",
+        "curated EEG records. Every executable gallery tutorial runs top "
+        "to bottom during documentation builds, and its captured first "
+        "figure is the thumbnail you see below.",
         "",
         "The intended path: read the curated **Tutorials** in order, dip "
         "into **How-to recipes** when you have a specific question, then "
@@ -252,8 +253,7 @@ def _write_auto_examples_root_index(app):
         "intended path.",
         "   - **Cards show the captured first figure.** Sphinx-gallery "
         "stores the first ``matplotlib`` figure as the thumbnail, so the "
-        "card preview is the literal output of running the script. A "
-        "branded fallback is shown when the tutorial produces no figure.",
+        "card preview is the literal output of running the tutorial.",
         "   - **Difficulty.** Each section header states the difficulty "
         "range (1 = absolute beginner, 3 = advanced / foundation-model "
         "tier).",

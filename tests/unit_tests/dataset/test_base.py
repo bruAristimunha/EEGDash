@@ -76,6 +76,46 @@ def test_eegdashraw_len_with_sfreq_ntimes(tmp_path):
     assert len(raw_obj) == 2688
 
 
+def test_eegdashraw_bidspath_preserves_recording_entity_from_bids_path(tmp_path):
+    """BIDS records with ``recording-`` must load their exact sidecar path."""
+    from eegdash.dataset.base import EEGDashRaw
+
+    dataset_id = "nm000281"
+    bids_relpath = (
+        "sub-04/ses-02/emg/"
+        "sub-04_ses-02_task-emg2pose_run-30_recording-left_emg.bdf"
+    )
+    record = {
+        "dataset": dataset_id,
+        "bids_relpath": bids_relpath,
+        "storage": {
+            "backend": "local",
+            "base": str(tmp_path / dataset_id),
+            "raw_key": bids_relpath,
+        },
+        "datatype": "emg",
+        "suffix": "emg",
+        "extension": ".bdf",
+        "entities": {
+            "subject": "04",
+            "session": "02",
+            "task": "emg2pose",
+            "run": "30",
+        },
+        "entities_mne": {
+            "subject": "04",
+            "session": "02",
+            "task": "emg2pose",
+            "run": "30",
+        },
+    }
+
+    with patch("eegdash.dataset.base.validate_record", return_value=None):
+        dataset = EEGDashRaw(record=record, cache_dir=tmp_path)
+
+    assert dataset.bidspath.fpath == tmp_path / dataset_id / bids_relpath
+
+
 def test_nemar_download_required_files_uses_annex_object_uri(tmp_path):
     from eegdash.dataset.base import EEGDashRaw
     from eegdash.schemas import create_record
