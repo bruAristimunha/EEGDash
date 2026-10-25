@@ -1,0 +1,37 @@
+# Read-only measurement: nm000281 header-read throughput on a GitHub-hosted runner
+# (the network the nightly digest uses). No DB, no listings, no secrets.
+name: nm281-runner-bench
+on: push
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: eegdash/EEGDash
+          ref: adfbbd2d71444cbe45cf56a2a661892851015794
+          path: tree
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: uv venv /tmp/venv && uv pip install --python /tmp/venv/bin/python -e "tree[digestion]"
+      - name: Clone nm000281 (read-only)
+        run: |
+          mkdir -p L/consolidated
+          curl -sL https://raw.githubusercontent.com/eegdash/eegdash-dataset-listings/main/consolidated/nemar_datasets.json -o L/consolidated/nemar_datasets.json
+          /tmp/venv/bin/python tree/scripts/ingestions/2_clone.py --input L/consolidated/nemar_datasets.json --output L/cloned --datasets nm000281 --workers 1 | tail -3
+      - name: Bench n_jobs 1,4,8 x2 (400-file subset)
+        env:
+          EEGDASH_REMOTE_HEADERS: missing
+          BENCH_NJ: "1,4,8,1,4,8"
+        run: /tmp/venv/bin/python bench/instrument.py tree L/cloned out 400 2>&1 | grep -E "subset|INVALID|'n_jobs'"
+      - if: always()
+        run: cat out/instrument.json || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instrument
+          path: out/instrument.json
