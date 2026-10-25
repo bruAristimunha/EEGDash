@@ -1,11 +1,12 @@
-# Read-only measurement: nm000281 header-read throughput on a GitHub-hosted runner
-# (the network the nightly digest uses). No DB, no listings, no secrets.
+# Read-only proof: full nm000281 digest on a GitHub-hosted runner (the nightly's network)
+# with the nightly's 1800 s guard, at --n-jobs 4 and 8, then strict validation.
+# No DB, no listings push, no secrets.
 name: nm281-runner-bench
 on: push
 jobs:
-  bench:
+  full-digest:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 110
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -23,15 +24,33 @@ jobs:
           mkdir -p L/consolidated
           curl -sL https://raw.githubusercontent.com/eegdash/eegdash-dataset-listings/main/consolidated/nemar_datasets.json -o L/consolidated/nemar_datasets.json
           /tmp/venv/bin/python tree/scripts/ingestions/2_clone.py --input L/consolidated/nemar_datasets.json --output L/cloned --datasets nm000281 --workers 1 | tail -3
-      - name: Bench n_jobs 1,4,8 x2 (400-file subset)
+      - name: Full digest, n_jobs 4, 1800 s guard
         env:
           EEGDASH_REMOTE_HEADERS: missing
-          BENCH_NJ: "1,4,8,1,4,8"
-        run: /tmp/venv/bin/python bench/instrument.py tree L/cloned out 400 2>&1 | grep -E "subset|INVALID|'n_jobs'"
-      - if: always()
-        run: cat out/instrument.json || true
+        run: |
+          t0=$(date +%s)
+          /tmp/venv/bin/python tree/scripts/ingestions/3_digest.py --input L/cloned --output D4 --datasets nm000281 --workers 1 --n-jobs 4 --dataset-timeout 1800 2>&1 | grep -vE "HTTP Request" | tail -15
+          echo "NJ4_SECONDS=$(( $(date +%s) - t0 ))"
+      - name: Full digest, n_jobs 8, 1800 s guard
+        if: always()
+        env:
+          EEGDASH_REMOTE_HEADERS: missing
+        run: |
+          t0=$(date +%s)
+          /tmp/venv/bin/python tree/scripts/ingestions/3_digest.py --input L/cloned --output D8 --datasets nm000281 --workers 1 --n-jobs 8 --dataset-timeout 1800 2>&1 | grep -vE "HTTP Request" | tail -15
+          echo "NJ8_SECONDS=$(( $(date +%s) - t0 ))"
+      - name: Strict validation
+        if: always()
+        run: |
+          for d in D4 D8; do echo "== $d"; /tmp/venv/bin/python tree/scripts/ingestions/4_validate_output.py --input $d --strict 2>&1 | tail -12; echo "validate $d exit=${PIPESTATUS[0]}"; done
+      - name: Compare (parity, sizing)
+        if: always()
+        run: /tmp/venv/bin/python bench/compare.py D4 D8
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: instrument
-          path: out/instrument.json
+          name: full-digest
+          path: |
+            compare.json
+            D4/nm000281/nm000281_summary.json
+            D8/nm000281/nm000281_summary.json
